@@ -1,13 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import "./globals.css"
 import { Providers } from "./providers"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ScrollToSection } from "@/components/scroll-to-section"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "AsulCFG Manager",
@@ -24,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className="font-sans">
         <Providers>
           <div className="min-h-screen flex flex-col">
             <Header />
