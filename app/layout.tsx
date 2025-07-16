@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "AsulCFG Manager",
   description: "一款现代化的 CS2 配置文件管理工具，采用 Fluent 设计语言打造",
   icons: {
-    icon: "/favicon.ico"
+    icon: "/icon/favicon.ico"
   }
 }
 

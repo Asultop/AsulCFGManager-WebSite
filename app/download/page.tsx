@@ -33,7 +33,7 @@ export default function DownloadPage() {
               </div>
               <div className="flex justify-between">
                 <span>{t("download.size")}</span>
-                <span>25 MB</span>
+                <span>40 MB</span>
               </div>
               <div className="flex justify-between">
                 <span>{t("download.platform")}</span>

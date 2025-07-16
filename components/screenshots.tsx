@@ -3,6 +3,11 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+} from "@/components/ui/dialog"
 import { DefaultImage } from "./default-image"
 import { t } from "@/lib/i18n"
 
@@ -13,6 +18,7 @@ type Screenshot = {
 }
 
 export function Screenshots() {
+  const [selectedImage, setSelectedImage] = useState<Screenshot | null>(null)
   const [screenshots, setScreenshots] = useState<Screenshot[]>([])
   const [loading, setLoading] = useState(true)
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
@@ -34,6 +40,11 @@ export function Screenshots() {
         id: "3",
         src: "/screenshots/03-config-management.png",
         alt: "配置文件管理",
+      },
+      {
+        id: "4",
+        src: "/screenshots/04-usersetting-viewer.png",
+        alt: "配置预览",
       },
     ])
     setLoading(false)
@@ -59,7 +70,7 @@ export function Screenshots() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {screenshots.map((screenshot, index) => (
               <Card key={screenshot.id} className="fluent-card overflow-hidden group">
-                <div className="relative aspect-video">
+                <div className="relative aspect-video cursor-zoom-in" onClick={() => setSelectedImage(screenshot)}>
                   {imageErrors[screenshot.id] ? (
                     <DefaultImage index={index} className="rounded-t-lg" />
                   ) : (
@@ -79,6 +90,22 @@ export function Screenshots() {
             ))}
           </div>
         )}
+
+        <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
+          <DialogContent className="max-w-[90vw] h-[90vh] sm:max-w-[80vw] sm:h-[80vh]">
+            <div className="relative h-full w-full">
+              {selectedImage && (
+                <Image
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 90vw, 80vw"
+                />
+              )}
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   )

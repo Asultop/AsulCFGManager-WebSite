@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "@/lib/use-translation"
 import { Download, ArrowRight } from "lucide-react"
@@ -12,7 +13,14 @@ export function Hero() {
     <div className="relative isolate px-6 pt-14 lg:px-8">
       <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
         <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl flex items-center">
+            <Image
+              src="/icon/favicon.png"
+              alt="Logo"
+              width={100}
+               height={100}
+              className="mr-3"
+            />
             {t("hero.title")}
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
