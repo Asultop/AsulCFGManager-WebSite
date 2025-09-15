@@ -75,7 +75,7 @@ export function Header() {
               </Link>
             </Button>
             <Link
-              href="https://github.com/Asultop/AsulCFGManager"
+              href="https://github.com/Asultop/Re-AsulCFGManager"
               target="_blank"
               rel="noreferrer"
             >

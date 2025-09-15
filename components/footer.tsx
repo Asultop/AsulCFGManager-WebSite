@@ -19,7 +19,7 @@ export function Footer() {
 
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
             <Link
-              href="https://github.com/Asultop/AsulCFGManager"
+              href="https://github.com/Asultop/Re-AsulCFGManager"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/80 hover:text-primary transition-colors"

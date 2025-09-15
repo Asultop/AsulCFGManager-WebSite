@@ -48,7 +48,7 @@ export default function DownloadPage() {
               asChild
             >
               <a 
-                href="https://github.com/Asultop/AsulCFGManager/releases/latest" 
+                href="https://github.com/Asultop/Re-AsulCFGManager/releases/latest" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center"
@@ -123,7 +123,7 @@ export default function DownloadPage() {
           <CardFooter>
             <Button className="w-full fluent-button" variant="outline" size="lg" asChild>
               <a 
-                href="https://github.com/Asultop/AsulCFGManager" 
+                href="https://github.com/Asultop/Re-AsulCFGManager" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center"
